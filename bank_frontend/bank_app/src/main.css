@@ -13,6 +13,10 @@ body{
     padding: 10px 0px;
 }
 
+.container{
+    margin: 10px auto;
+}
+
 .main-page-header .company-name{
     font-weight: 600;
     color: white;
@@ -35,4 +39,41 @@ body{
 
 .display-name i{
     font-weight: 600px;
+}
+/* Transaction Button*/
+#transact-btn{
+    background-color: aqua;
+    border: 1px solid teal;
+    
+}
+
+#account-btn{
+    background-color: red;
+  border: 1px solid #ff4d0075;
+  color: white;
+}
+
+/*Off Canvas Background (Design new background image)*/
+.offcanvas{
+    background-image: url("../public/images/Untitled.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: none;
+}
+
+/* Card payment-card*/
+.payment-card{
+    display: none;
+}
+
+.transfer-card{
+    display: none;
+}
+
+.deposit-card{
+    display: none;
+}
+
+.wthdraw-card{
+    display: none;
 }

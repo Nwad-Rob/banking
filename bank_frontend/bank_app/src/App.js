@@ -1,6 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
 
+//Get Transaction Types
+const transactType = document.querySelector("#transact-type");
+
+//Get Transaction Forms
+const paymentCard = document.querySelector(".payment-card");
+const transfercard = document.querySelector(".transfer-card");
+
+transactType.addEventListener("change", ()=>{
+    //Check for Transaction type and Display Forms
+    switch(transactType.value()){
+      case "payment" :
+        paymentCard.style.display = "block";
+        paymentCard.nextElementSibling.style.display = "none";
+        break;
+    }
+});
+
 function App() {
   return (
     <div className="App">

@@ -59,7 +59,7 @@
                         Choose an Option below to perform a transaction
                     </small>
                    <!--Transaction type: Drop down list-->
-                    <select name="transact-type" class="form-control my-3" id="">
+                    <select name="transact-type" class="form-control my-3" id="transact-type">
                         <option value="">-- Select Transaction type --</option>
                         <option value="payment">-- Payment --</option>
                         <option value="transfer">-- Transfer --</option>
@@ -110,9 +110,109 @@
                     </div>
                     <!--End of Card Body-->
                    </div>
-                   <!-- End of Car Payment-->
+                   <!-- End of Card Payment-->
                    
+ <!--Card: transfer-->
+ <div class="card transfer-card">
+  <!--Card Body-->
+  <div class="card-body">
+    
 
+     <!--Form Group-->
+     <div class="form-group">
+      <label for=""> Select Account</label>
+           <!-- Select Account Option-->
+      <select name="account_id" class="form-control " id="">
+          <option value="">-- Select Account --</option>
+      </select>
+     </div>
+
+      <!--Form Group-->
+      <div class="form-group">
+        <label for=""> Select Account</label>
+             <!-- Select Account Option-->
+        <select name="account_id" class="form-control " id="">
+            <option value="">-- Select Account --</option>
+        </select>
+       </div>
+
+  <!--Another Form Group-->
+  <div class="form-group">
+      <label for="">Enter transfer Amount</label>
+      <input type="text" class="form-control"   name="transfer_amount" Placeholder=" Enter transfer Amount">
+  </div>
+
+  <div class="form-group">
+      <button id="transact-btn" class="btn btn-md"> Transfer </button>
+  </div>
+
+
+  </div>
+  <!--End of Card Body-->
+ </div>
+ <!-- End of Card transfer-->
+
+ <!--Card: deposit-->
+ <div class="card deposit-card">
+  <!--Card Body-->
+  <div class="card-body">
+    <div class="form-group">
+      <label for="">Enter deposit Amount</label>
+      <input type="text" class="form-control"   name="deposit_amount" Placeholder=" Enter Deposit Amount">
+  </div>
+  <form action="" class="depost-form">
+    <!--Form Group-->
+    <div class="form-group">
+      <label for=""> Select Account</label>
+           <!-- Select Account Option-->
+      <select name="account_id" class="form-control " id="">
+          <option value="">-- Select Account --</option>
+      </select>
+     </div>
+
+<div class="form-group ">
+    <button id="transact-btn" class="btn btn-md"> Deposit </button>
+</div>
+
+
+  </form>
+ 
+  <!--End of the Deposit form-->
+  </div>
+  <!--End of Card Body-->
+ </div>
+ <!-- End of Card deposit-->
+
+ <!--Card: withdraw-->
+ <div class="card withdraw-card">
+  <!--Card Body-->
+  <div class="card-body">
+    <div class="form-group">
+      <label for="">Enter Withdrawal Amount</label>
+      <input type="text" class="form-control"   name="withdraw_amount" Placeholder=" Enter Withdrawal Amount">
+  </div>
+  <form action="" class="depost-form">
+    <!--Form Group-->
+    <div class="form-group">
+      <label for=""> Select Account</label>
+           <!-- Select Account Option-->
+      <select name="account_id" class="form-control " id="">
+          <option value="">-- Select Account --</option>
+      </select>
+     </div>
+
+<div class="form-group ">
+    <button id="transact-btn" class="btn btn-md"> Withdraw </button>
+</div>
+
+
+  </form>
+ 
+  <!--End of the withdraw form-->
+  </div>
+  <!--End of Card Body-->
+ </div>
+ <!-- End of Card withdraw-->
                 </div>
                 <!--End of offCanvas Body-->
                 
@@ -121,12 +221,41 @@
             <!--Right Side Offcanvas: Accounts Form Container-->
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightlabel">
                 <div class="offcanvas-header">
-                <h5 id="offCanvasRightlabel"> OffCanvas Right</h5>
+                <h5 id="offCanvasRightlabel" class="text-black"> Create / Add an Account</h5>
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                  </div>
             <!-- Offcanvas Body: Accounts form wrapper-->
                  <div class="offcanvas-body">
-                       hmmmm
+                       <!-- Card: Account form Card-->
+                        <div class="card">
+                          <!-- Card Body-->
+                          <div class="card-body">
+                            <form action="" class="add-account-form">
+                              <!--Form Group-->
+                              <div class="form-group mb-3">
+                                <label for=""> Enter Account Name </label>
+                                <input type="text" name="account_name" class="form-control" placeholder="Enter Account name">
+                              </div>
+
+                                <!--Form Group-->
+                                <div class="form-group mb-3">
+                                  <label for=""> Enter Account Name </label>
+                                 <select name="account_type" class="form-control" id="">
+                                  <option value=""> --Select Account Type--</option>
+                                  <option value="check"> --Checking Account--</option>
+                                  <option value="savings"> --Savings Account Type</option>
+                                  <option value="business"> --Business Account Type</option>
+                                 </select>
+                                </div>
+
+                                <!--Form Group-->
+                                <div class="form-group mb-2 ">
+                                  <button id="transact-btn" class="btn btn-md"> Add Account </button>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                       <!--End of Card: Account form Card-->
                     </div>
              <!-- End of Offcanvas Body: Accounts form wrapper-->
              </div>
@@ -217,6 +346,8 @@
      <!--End of Card: # Accounts-->
 </div>
 <!--Container: No Accounts-->
+
+<script src="main.js"></script>
 
 
     

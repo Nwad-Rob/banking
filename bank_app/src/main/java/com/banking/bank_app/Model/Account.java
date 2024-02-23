@@ -26,7 +26,7 @@ public class Account {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
-    private Client client; 
+    private User client; 
 
     @Column(name = "account_number")
     private String accountNumber;
@@ -71,11 +71,11 @@ public class Account {
         this.account_id = account_id;
     }
 
-    public Client getClient() {
+    public User getClient() {
         return this.client;
     }
 
-    public void setClient(Client client) {
+    public void setClient(User client) {
         this.client = client;
     }
 

@@ -9,6 +9,7 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 
 public class mailMessenger {
+    @SuppressWarnings("null")
     public static void htmlEmailMessenger(String from, String toMail, String subject, String body) throws MessagingException{
         // Get mail config
         JavaMailSender sender = MailConfig.getMailConfig();

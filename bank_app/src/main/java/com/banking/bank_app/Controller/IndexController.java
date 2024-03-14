@@ -40,13 +40,6 @@ public class IndexController {
         return getRegisterPage;
     }
 
-    @GetMapping("/error")
-    public ModelAndView getError() {
-        ModelAndView getErrorPage = new ModelAndView("error");
-        System.out.println(" In Error Page Controller:");
-        getErrorPage.addObject("PageTitle", "Error");
-        return getErrorPage;
-    }
 
     @GetMapping("/verify")
     public ModelAndView getVerify() {
@@ -56,23 +49,6 @@ public class IndexController {
         return getVerifyPage;
     }
 
-    @PostMapping("/register")
-    public ModelAndView postRegister(@Valid @ModelAttribute("registerUser") User user,
-            BindingResult result, @RequestParam("first_name") String first_name,
-            @RequestParam("last_name") String last_name,
-            @RequestParam("email") String email,
-            @RequestParam("password") String password,
-            @RequestParam("confirm_password") String confirm_password) {
-
-        ModelAndView postRegisterPage = new ModelAndView("register");
-
-        // Check for Errors
-        if (result.hasErrors() && confirm_password.isEmpty()) {
-            postRegisterPage.addObject("confirm_pass", "The confirm field is required");
-            return postRegisterPage;
-        }
-
-        return postRegisterPage;
-    }
+    
 
 }

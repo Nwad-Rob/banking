@@ -1,3 +1,9 @@
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,7 +20,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="../src/index.css">
+    <link rel="stylesheet" href="../resources/css/index.css">
 
     <title>Home</title>
   </head>

@@ -8,7 +8,7 @@ import com.banking.bank_app.Config.MailConfig;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 
-public class mailMessenger {
+public class MailMessenger {
     @SuppressWarnings("null")
     public static void htmlEmailMessenger(String from, String toMail, String subject, String body) throws MessagingException{
         // Get mail config

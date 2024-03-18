@@ -2,6 +2,7 @@ package com.banking.bank_app.Controller;
 
 import java.util.Random;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -13,12 +14,18 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.banking.bank_app.Helpers.HTML;
 import com.banking.bank_app.Helpers.Token;
+import com.banking.bank_app.MailMessenger.MailMessenger;
 import com.banking.bank_app.Model.User;
+import com.banking.bank_app.Repository.UserRepository;
 
+import jakarta.mail.MessagingException;
 import jakarta.validation.Valid;
 
-@Controller("/")
+@Controller
 public class RegisterController {
+
+    @Autowired
+    private UserRepository userRepo;
 
     @GetMapping("/error")
     public ModelAndView getError() {
@@ -62,11 +69,22 @@ public class RegisterController {
      String emailBody = HTML.htmlEmailTemplate(token, code);
 
 // HASH THE PASSWORD
-     String hashed_password = BCrypt.hashpw(password,BCrypt.gensalt());
+     String hashed_password = BCrypt.hashpw(password,BCrypt.gensalt());                      
 
 // REGISTER USER
+     userRepo.registerUser(first_name, last_name, email, hashed_password, token, code);   
+
 // SEND EMAIL NOTIFICATION
+     try {
+        MailMessenger.htmlEmailMessenger("no-reply@Dynamicbank.com", email, "Verify Account", emailBody);
+    } catch (MessagingException e) {
+        e.printStackTrace();     
+    }
+
 // RETURN TO REGISTER PAGE
+    String successMessage = "Account Registered Successfully. Please check your email and verify your account";
+    postRegisterPage.addObject("Success", successMessage);
     return postRegisterPage;
+    
     }
 }

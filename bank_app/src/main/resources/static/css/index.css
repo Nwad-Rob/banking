@@ -3,7 +3,7 @@
 body {
   margin: 0;
   height:100vh;
-  background-image: url("../public/images/Rob_Logo-01.png");
+  background-image: url("/bank_app/src/main/resources/static/images/Rob_Logo-01.png");
   background-size: cover;
   background-position: center center;
   background-repeat: none;

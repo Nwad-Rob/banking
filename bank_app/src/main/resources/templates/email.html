@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!-- Remember to change from double quote to single quote because of Java-->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../src/email.css" />
+    <title>Email Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+
+      /*Main body Styling*/
+
+      body {
+        height: 100vh;
+        background-color: aliceblue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .wrapper {
+        width: 550px;
+        height: auto;
+        padding: 15px;
+        background-color: white;
+        border-radius: 7px;
+      }
+
+      /*Email Body styling*/
+      .email-msg-header {
+        text-align: center;
+      }
+
+      .company-name {
+        font-size: 35px;
+        color: grey;
+        width: 100%;
+        text-align: center;
+      }
+
+      .welcome-text {
+        align-items: center;
+        justify-content: center;
+      }
+
+      .verify-account-btn {
+        padding: 15px;
+        background-color: aquamarine;
+        text-decoration: none;
+        color: black;
+        border-radius: 5px;
+      }
+
+      .copy-right {
+        text-align: center;
+        padding: 15px;
+        color: gray;
+        font-size: 14px;
+        margin: 20px 0px;
+        justify-content: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <!--Wrapper-->
+    <div class="wrapper">
+      <!--Email MSG Header-->
+      <h2 class="email-msg-header">Welcome and Thank you for Choosing</h2>
+      <hr />
+      <!--End of MSG Header-->
+      <!--Company Name-->
+      <div class="company-name">Dynamic Bank</div>
+
+      <!--End of Company Name-->
+
+      <p class="welcome-text">
+        Your Account has been successfully registered, Please click below to
+        verify your account
+      </p>
+      <!--End of Wrapper-->
+      <br />
+      <br />
+
+      <!-- Verification Button-->
+      <center>
+        <a href="" class="verify-account-btn" role="button"> Verify Account</a>
+      </center>
+      <!-- End of Verification Button-->
+
+      <!--Copyright Clause-->
+      <div class="copy-right">&copy; Copy Rights 2022. All Rights Reserved</div>
+      <!--End of Copyright Clause-->
+    </div>
+  </body>
+</html>

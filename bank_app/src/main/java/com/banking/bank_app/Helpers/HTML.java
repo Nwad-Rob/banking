@@ -105,7 +105,7 @@ public class HTML {
         "</html>";
 
 
-        return "";
+        return htmlString;
 
 
 

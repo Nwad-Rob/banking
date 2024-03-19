@@ -19,11 +19,11 @@ public class User {
 
     @NotEmpty(message = " the first name field cannot be empty")
     @Size(min = 3,message = "The First Name field must be greater than 3 characters")
-    private String first_Name;
+    private String first_name;
 
     @NotEmpty
     @Size(min = 3, message = "The last Name field must be greater than 3 characters")
-    private String last_Name;
+    private String last_name;
 
     // Pattern was set for the login in or registration page to accept an email
     // pattern
@@ -78,20 +78,20 @@ public class User {
         this.user_id = user_id;
     }
 
-    public String getFirst_Name() {
-        return this.first_Name;
+    public String getFirst_name() {
+        return this.first_name;
     }
 
-    public void setFirst_Name(String first_Name) {
-        this.first_Name = first_Name;
+    public void setFirst_name(String first_name) {
+        this.first_name = first_name;
     }
 
-    public String getLast_Name() {
-        return this.last_Name;
+    public String getLast_name() {
+        return this.last_name;
     }
 
-    public void setLast_Name(String last_Name) {
-        this.last_Name = last_Name;
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
     }
 
     public String getEmail() {

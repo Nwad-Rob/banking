@@ -1,19 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xlmns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
-    <link rel="stylesheet" href="../src/index.css" />
+    <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet" />
+    <link th:href="@{/css/fontawesome/css/all.css}" rel="stylesheet" />
+    <link th:href="@{/css/index.css}" rel="stylesheet" />
+
     <title>Register</title>
   </head>
   <body class="d-flex align-items-center justify-content-center">
@@ -26,74 +19,132 @@
           <i class="fa fa-edit"></i>Register
         </h1>
         <!--End of Form Header-->
+
+        <!-- Display Message -->
+        <div
+          th:if="${passwordMismatch != null}"
+          class="alert alert-danger text-center border border-danger"
+        >
+          <b th:text="${passwordMismatch}"></b>
+        </div>
+
+        <!-- Display Message-->
+        <div
+          th:if="${success != null}"
+          class="alert alert-success text-center border border-success"
+        >
+          <b th:text="${success}"></b>
+        </div>
+
         <!--Registration Form-->
-        <form action="" class="reg-form">
-          <!--Form Row-->
+        <form
+          action="/register"
+          class="reg-form"
+          th:object="${registerUser}"
+          method="post"
+        >
+          <!-- Row -->
           <div class="row">
+            <!-- From Group -->
             <div class="form-group col">
               <input
                 type="text"
-                name="first_name"
-                class="form-control-lg"
+                th:field="*{first_name}"
+                class="form-control form-control-lg"
                 placeholder="Enter First Name"
               />
+              <small
+                th:if="${#fields.hasErrors('first_name')}"
+                th:errors="*{first_name}"
+                class="text-white bg-danger"
+              ></small>
             </div>
+            <!-- End Of From Group -->
 
+            <!-- From Group -->
             <div class="form-group col">
               <input
                 type="text"
-                name="last_name"
-                class="form-control-lg"
+                th:field="*{last_name}"
+                class="form-control form-control-lg"
                 placeholder="Enter Last Name"
               />
+              <small
+                th:if="${#fields.hasErrors('last_name')}"
+                th:errors="*{last_name}"
+                class="text-white bg-danger"
+              ></small>
             </div>
+            <!-- End Of From Group -->
           </div>
+          <!-- End Of Row -->
 
-          <div class="form-group col ">
+          <!-- From Group -->
+          <div class="form-group col">
             <input
               type="email"
-              name="email"
-              class="form-control-lg"
+              th:field="*{email}"
+              class="form-control form-control-lg"
               placeholder="Enter Email"
             />
+            <small
+              th:if="${#fields.hasErrors('email')}"
+              th:errors="*{email}"
+              class="text-white bg-danger"
+            ></small>
           </div>
+          <!-- End Of From Group -->
 
+          <!-- Row -->
           <div class="row">
+            <!-- From Group -->
             <div class="form-group col">
               <input
                 type="password"
-                name="password"
-                class="form-control-lg"
+                th:field="*{password}"
+                class="form-control form-control-lg"
                 placeholder="Enter Password"
               />
+              <small
+                th:if="${#fields.hasErrors('password')}"
+                th:errors="*{password}"
+                class="text-white bg-danger"
+              ></small>
             </div>
+            <!-- End Of From Group -->
 
+            <!-- From Group -->
             <div class="form-group col">
               <input
                 type="password"
-                name="cofirm_password"
-                class="form-control-lg"
+                name="confirm_password"
+                class="form-control form-control-lg"
                 placeholder="Confirm Password"
               />
+              <small
+                th:text="${confirm_pass}"
+                class="text-white bg-danger"
+              ></small>
             </div>
           </div>
 
           <div class="form-group col">
-            <button class="btn btn-lg">Register</button>
-          </div>
+            <button type="submit" class="btn btn-lg">Register</button>
+        </div>
+        
           <!--End of Row-->
         </form>
 
         <p class="card-text text-white my-2">
-          Already have an account?<span class="ms-2 "><a href="login.html" class="btn bt-sm  text-warning"> Sign In</a>
-            </span
-          >
+          Already have an account?<span class="ms-2"
+            ><a th:href="@{/login}" class="btn bt-sm text-warning"> Sign In</a>
+          </span>
         </p>
 
         <!-- Back Button to Landing page-->
         <small class="text-warning">
           <i class="fa fa-arrow-alt-circle-left me-1"></i
-          ><a href="index.html" class="btn btn-sm text-warning"> Back</a>
+          ><a th:href="@{/}" class="btn btn-sm text-warning"> Back</a>
         </small>
         <!-- End of back Button to Landing page-->
       </div>

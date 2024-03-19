@@ -83,7 +83,7 @@ public class RegisterController {
 
 // RETURN TO REGISTER PAGE
     String successMessage = "Account Registered Successfully. Please check your email and verify your account";
-    postRegisterPage.addObject("Success", successMessage);
+    postRegisterPage.addObject("success", successMessage);
     return postRegisterPage;
     
     }

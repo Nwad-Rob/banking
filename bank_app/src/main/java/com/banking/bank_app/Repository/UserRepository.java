@@ -12,11 +12,11 @@ import com.banking.bank_app.Model.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
     @Modifying
-    @Query(value = "INSERT INTO Users (first_Name,last_Name,email, password,token,code) VALUES" +
-                    "(:first_Name, :last_Name, :email, :password, :token, :code)",nativeQuery = true)
+    @Query(value = "INSERT INTO Users (first_name,last_name,email, password,token,code) VALUES" +
+                    "(:first_name, :last_name, :email, :password, :token, :code)",nativeQuery = true)
     @Transactional
-    void registerUser(@Param("first_Name") String first_Name,
-                      @Param("last_Name") String last_Name,
+    void registerUser(@Param("first_name") String first_name,
+                      @Param("last_name") String last_name,
                       @Param("email") String email,
                       @Param("password") String password,
                       @Param("token") String token,

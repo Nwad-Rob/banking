@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- Remember to change from double quote to single quote because of Java-->
-<html lang="en">
+<html xlmns:th="http://www.thymeleaf.org" >
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../src/email.css" />
+    <link rel="stylesheet" th:href="@{/css/email.css}" />
     <title>Email Document</title>
     <style>
       * {
@@ -88,7 +88,7 @@
 
       <!-- Verification Button-->
       <center>
-        <a href="" class="verify-account-btn" role="button"> Verify Account</a>
+        <a th:href="" class="verify-account-btn" role="button"> Verify Account</a>
       </center>
       <!-- End of Verification Button-->
 

@@ -13,7 +13,7 @@ public class MailConfig {
     public static JavaMailSenderImpl getMailConfig(){
         JavaMailSenderImpl emailConfig = new JavaMailSenderImpl();
 
-        // Set Properties
+        // Set Properties and 
         Properties props = emailConfig.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.auth", "true");

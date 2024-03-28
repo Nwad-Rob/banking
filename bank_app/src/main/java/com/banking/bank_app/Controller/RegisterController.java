@@ -31,7 +31,7 @@ public class RegisterController {
     public ModelAndView getError() {
         ModelAndView getErrorPage = new ModelAndView("error");
         System.out.println(" In Error Page Controller:");
-        getErrorPage.addObject("PageTitle", "Error");
+        getErrorPage.addObject("PageTitle", "error");
         return getErrorPage;
     }
 

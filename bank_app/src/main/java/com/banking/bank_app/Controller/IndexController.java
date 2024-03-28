@@ -1,11 +1,18 @@
 package com.banking.bank_app.Controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.banking.bank_app.Repository.UserRepository;
 
 @Controller
 public class IndexController {
+
+    @Autowired
+    private UserRepository userRepo;
 
     @GetMapping("/")
     public ModelAndView getIndex() {
@@ -34,10 +41,12 @@ public class IndexController {
 
 
     @GetMapping("/verify")
-    public ModelAndView getVerify() {
+    public ModelAndView getVerify(@RequestParam("token")String token, @RequestParam ("code") int code) {
         ModelAndView getVerifyPage = new ModelAndView("login");
+        userRepo.verifyAccount(token, code);
+
         System.out.println(" In Verify Page Controller:");
-        getVerifyPage.addObject("PageTitle", "error");
+        getVerifyPage.addObject("success", "Account has been verified successfully, Please proceed to Log in");
         return getVerifyPage;
     }
 

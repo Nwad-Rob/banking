@@ -14,17 +14,18 @@ public class MailConfig {
         JavaMailSenderImpl emailConfig = new JavaMailSenderImpl();
 
         // Set Properties and 
+
         Properties props = emailConfig.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.debug ", "smtp");
+        props.put("mail.debug", "smtp");
 
         //Setting mail credentials, using STMP Server
-        emailConfig.setHost("stmp.gmail.com");
-        emailConfig.setPort(465);
+        emailConfig.setHost("smtp.gmail.com");
+        emailConfig.setPort(587);
         emailConfig.setUsername("t0239282@gmail.com");
-        emailConfig.setPassword("tokb hilw bvla skjs");
+        emailConfig.setPassword("tokb hilw bvla skjs");//testPassword@000
 
         return emailConfig;
 

@@ -19,6 +19,15 @@
           <i class="fa fa-user-circle"></i>Login
         </h1>
         <!--End of Form Header-->
+
+         <!-- Display Message -->
+         <div
+         th:if="${passwordMismatch != null}"
+         class="alert alert-danger text-center border border-danger"
+       >
+         <b th:text="${passwordMismatch}"></b>
+       </div>
+       
         <!--Registration Form-->
         <form action="" class="login-form">
           <!--Form Row-->

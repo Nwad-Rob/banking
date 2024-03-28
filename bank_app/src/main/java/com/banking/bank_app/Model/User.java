@@ -41,7 +41,8 @@ public class User {
 
     private String code;
 
-    private int verified;
+    @Column(name = "verified", nullable = false, columnDefinition = "BOOLEAN DEFAULT false")
+    private boolean verified;
 
     @Column(name = "verified_at")
     private LocalDate verifiedAt;
@@ -126,11 +127,11 @@ public class User {
         this.code = code;
     }
 
-    public int getVerified() {
+    public boolean getVerified() {
         return this.verified;
     }
 
-    public void setVerified(int verified) {
+    public void setVerified(boolean verified) {
         this.verified = verified;
     }
 

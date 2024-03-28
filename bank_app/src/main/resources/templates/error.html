@@ -34,7 +34,15 @@
       <!--Card Body-->
       <div class="card body bg-transparent border-0">
         <p class="card-text">
-          There is an error, something went wrong. I apologize for the inconvience this may have cost you as our valued customer.
+         
+           <!-- Display Message -->
+        <div
+        th:if="${error != null}"
+        class="alert alert-danger text-center border border-danger"
+      >
+        <b th:text="${error}"></b>
+      </div>
+          Unfortunately, something went wrong. I apologize for the inconvience this may have cost you as our valued customer.
            Our development team will input all our efforts to ensure this does not occur again and ruin your experience.
            Thank you for banking with Dynamic Bank.
         </p>

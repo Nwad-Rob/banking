@@ -75,11 +75,13 @@ public class RegisterController {
      userRepo.registerUser(first_name, last_name, email, hashed_password, token, code);   
 
 // SEND EMAIL NOTIFICATION
-     try {
-        MailMessenger.htmlEmailMessenger("no-reply@Dynamicbank.com", email, "Verify Account", emailBody);
-    } catch (MessagingException e) {
-        e.printStackTrace();     
-    }
+   try {
+    String senderAddress = "noreply@dynamicbank.com";
+    MailMessenger.htmlEmailMessenger(senderAddress, email, "Verify Account", emailBody);
+} catch (MessagingException e) {
+    e.printStackTrace();
+}
+
 
 // RETURN TO REGISTER PAGE
     String successMessage = "Account Registered Successfully. Please check your email and verify your account";

@@ -5,7 +5,7 @@ public class HTML {
     public static String htmlEmailTemplate(String token, int code){
         
         //Verifying Account
-        String url = "http://127.0.0.1:8070/verify?token" + token + "&code=" + code;
+        String url = "http://127.0.0.1:8070/verify?token=" + token + "&code=" + code;
 
         String htmlString = "<!DOCTYPE html>\n" +
         "<html lang='en'>\n" +

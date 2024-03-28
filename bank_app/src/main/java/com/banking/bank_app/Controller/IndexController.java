@@ -41,9 +41,24 @@ public class IndexController {
 
 
     @GetMapping("/verify")
-    public ModelAndView getVerify(@RequestParam("token")String token, @RequestParam ("code") int code) {
-        ModelAndView getVerifyPage = new ModelAndView("login");
+    public ModelAndView getVerify(@RequestParam("token") String token, @RequestParam ("code") int code) {
+        //SET VIEW
+        System.out.println("checking for the following. code: " + code +" and token: "+ token);
+        ModelAndView getVerifyPage;
+
+        //GET TOKEN IN DB
+        String dbToken = userRepo.checkToken(token);
+
+        // CHECK IF TOKEN IS VALID
+        if (dbToken.isEmpty() || dbToken == ""){
+            getVerifyPage = new ModelAndView("error");
+            getVerifyPage.addObject("error", "This session Has Expired");
+            return getVerifyPage;
+        }
+
+        //UPDATE AND VERIFY ACCOUNT
         userRepo.verifyAccount(token, code);
+        getVerifyPage = new ModelAndView("login");
 
         System.out.println(" In Verify Page Controller:");
         getVerifyPage.addObject("success", "Account has been verified successfully, Please proceed to Log in");

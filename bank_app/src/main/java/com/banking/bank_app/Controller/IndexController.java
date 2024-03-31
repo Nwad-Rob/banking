@@ -23,13 +23,7 @@ public class IndexController {
         return getIndexPage;
     }
 
-    @GetMapping("/login")
-    public ModelAndView getLogin() {
-        ModelAndView getLoginPage = new ModelAndView("login");
-        System.out.println("In Login Page Controller");
-        getLoginPage.addObject("PageTitle", "login");
-        return getLoginPage;
-    }
+    
 
     @GetMapping("/register")
     public ModelAndView getRegister() {
@@ -50,9 +44,9 @@ public class IndexController {
         String dbToken = userRepo.checkToken(token);
 
         // CHECK IF TOKEN IS VALID
-        if (dbToken.isEmpty() || dbToken == ""){
+        if (dbToken == null){
             getVerifyPage = new ModelAndView("error");
-            getVerifyPage.addObject("error", "This session Has Expired");
+            getVerifyPage.addObject("error", "This Session Has Expired");
             return getVerifyPage;
         }
 

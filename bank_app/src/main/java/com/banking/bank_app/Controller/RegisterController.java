@@ -76,6 +76,7 @@ public class RegisterController {
 
 // SEND EMAIL NOTIFICATION
    try {
+    //Needs to be a valid an active email address
     String senderAddress = "noreply@dynamicbank.com";
     MailMessenger.htmlEmailMessenger(senderAddress, email, "Verify Account", emailBody);
 } catch (MessagingException e) {

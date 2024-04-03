@@ -16,7 +16,7 @@ public interface UserRepository extends JpaRepository<User, Long> {
         User getUserDetails(@Param ("email") String email);
 
         //Checking if the account is verified
-        @Query(value= "SELECT verfied FROM Users WHERE email = :email",nativeQuery = true)
+        @Query(value= "SELECT verified FROM Users WHERE email = :email",nativeQuery = true)
         Boolean isVerified(@Param("email") String email);
 
         //Grabbing the email and password from the database

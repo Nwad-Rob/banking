@@ -83,6 +83,6 @@ public class AuthController {
        
         
 
-        return "redirct:/app/dashboard";
+        return "redirect:/app/dashboard";
     }   
 }

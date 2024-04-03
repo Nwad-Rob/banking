@@ -55,7 +55,7 @@ body{
 
 /*Off Canvas Background (Design new background image)*/
 .offcanvas{
-    background-image: url("../public/images/Untitled.png");
+    background-image: url("../images/Untitled.png");
     background-size: cover;
     background-position: center center;
     background-repeat: none;

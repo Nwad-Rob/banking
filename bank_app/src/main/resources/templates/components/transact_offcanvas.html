@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<!-- Start of offcanvas body -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-label="offcanvasExampleLablel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title text-black" id="offcanvasExampleLabel">Transaction</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <!-- OffCanvas: transaction body -->
+    <div class="offcanvas-body">
+        <small class="card-text text-black">
+            Choose an Option below to perform a transaction
+        </small>
+        <!-- Transaction type: Drop down list -->
+        <select name="transact-type" class="form-control my-3" id="transact-type">
+            <option value="">-- Select Transaction type --</option>
+            <option value="payment">-- Payment --</option>
+            <option value="transfer">-- Transfer --</option>
+            <option value="deposit">-- Deposit --</option>
+            <option value="withdraw">-- Withdraw --</option>
+        </select>
+        <!-- End of Transaction type: Drop down list -->
+        
+        <!-- Payment Form Cards -->
+        <div th:include="components/transact_forms/payment_form :: payment_form"></div>
+        <!-- End Of Payment Form Cards -->
+        
+        <!-- Transfer Form Cards -->
+        <div th:include="components/transact_forms/transfer_form :: transfer_form"></div>
+        <!-- End Of Transfer Form Cards -->
+        
+        <!-- Deposit Form Cards -->
+        <div th:include="components/transact_forms/deposit_form :: deposit_form"></div>
+        <!-- End Of Deposit Form Cards -->
+        
+        <!-- Withdraw Form Cards -->
+        <div th:include="components/transact_forms/withdraw_form :: withdraw_form"></div>
+        <!-- End Of Withdraw Form Cards -->
+    </div>
+    <!-- End of offCanvas Body -->
+</div>
+<!-- End of Transaction body -->
+
+</html>

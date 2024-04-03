@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xlmns:th="http://www.thymeleaf.org" >
+
+   <!--Card: Payment-->
+   <div class="card payment-card">
+    <!--Card Body-->
+    <div class="card-body">
+        <!--form Groups-->
+        <div class="form-group mb-2">
+            <label for=""> Account Holder/Beneficiery</label>
+            <input type="text" class="form-control"   name="account_number"Placeholder=" Enter Account Holder / Beneficiery's Name">
+        </div>
+        <!--Second Form Group-->
+        <div class="form-group">
+            <label for=""> Beneficiery Account Number</label>
+            <input type="text" class="form-control"   name="account_number"Placeholder=" Beneficiery's Account No">
+        </div>
+
+       <!--Form Group-->
+       <div class="form-group">
+        <label for=""> Select Account</label>
+             <!-- Select Account Option-->
+        <select name="account_id" class="form-control " id="">
+            <option value="">-- Select Account --</option>
+        </select>
+       </div>
+
+       <div class="form-group">
+        <label for=""> Reference</label>
+        <input type="text" class="form-control"   name="reference"Placeholder=" Enter Reference">
+    </div>
+    <!--Another Form Group-->
+    <div class="form-group">
+        <label for="">Enter Payment Amount</label>
+        <input type="text" class="form-control"   name="payment_amount" Placeholder=" Enter Payment Amount">
+    </div>
+
+    <div class="form-group">
+        <button id="transact-btn" class="btn btn-md"> Pay </button>
+    </div>
+
+
+    </div>
+    <!--End of Card Body-->
+   </div>
+   <!-- End of Card Payment-->
+
+</html>

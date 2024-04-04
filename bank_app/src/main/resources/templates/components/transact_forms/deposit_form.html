@@ -1,35 +1,31 @@
 <!DOCTYPE html>
-<html xlmns:th="http://www.thymeleaf.org" >
+<html xmlns:th="http://www.thymeleaf.org">
 
-<!--Card: deposit-->
+<!-- Card: deposit -->
 <div class="card deposit-card">
-    <!--Card Body-->
+    <!-- Card Body -->
     <div class="card-body">
-    <div class="form-group">
-    <label for="">Enter deposit Amount</label>
-    <input type="text" class="form-control"   name="deposit_amount" Placeholder=" Enter Deposit Amount">
+        <div class="form-group">
+            <label for="">Enter deposit Amount</label>
+            <input type="text" class="form-control" th:name="deposit_amount" th:placeholder="Enter Deposit Amount">
+        </div>
+        <form action="" class="depost-form" th:action="@{/deposit}">
+            <!-- Form Group -->
+            <div class="form-group">
+                <label for=""> Select Account</label>
+                <!-- Select Account Option -->
+                <select name="account_id" class="form-control" id="">
+                    <option value="">-- Select Account --</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button id="transact-btn" class="btn btn-md" type="submit"> Deposit </button>
+            </div>
+        </form>
+        <!-- End of the Deposit form -->
     </div>
-    <form action="" class="depost-form">
-    <!--Form Group-->
-    <div class="form-group">
-    <label for=""> Select Account</label>
-       <!-- Select Account Option-->
-    <select name="account_id" class="form-control " id="">
-      <option value="">-- Select Account --</option>
-    </select>
-    </div>
-    
-    <div class="form-group ">
-    <button id="transact-btn" class="btn btn-md"> Deposit </button>
-    </div>
-    
-    
-    </form>
-    
-    <!--End of the Deposit form-->
-    </div>
-    <!--End of Card Body-->
-    </div>
-    <!-- End of Card deposit-->
+    <!-- End of Card Body -->
+</div>
+<!-- End of Card deposit -->
 
 </html>

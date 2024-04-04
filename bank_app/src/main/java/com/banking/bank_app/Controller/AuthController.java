@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.banking.bank_app.Helpers.Token;
 import com.banking.bank_app.Model.User;
@@ -85,4 +86,12 @@ public class AuthController {
 
         return "redirect:/app/dashboard";
     }   
+
+    @GetMapping("/logout")
+    public String logout(HttpSession session, RedirectAttributes redirect){
+        session.invalidate();
+        redirect.addFlashAttribute("logged_out", "Logged out successful");
+        return "redirect:/login";
+
+    }
 }

@@ -11,18 +11,18 @@
             </div>
             <!--Navigation-->
             <nav class="navigation">
-                <li><a th:href=""> Dashboard </a></li>
+                <li><a th:href="@{/dashboard}"> Dashboard </a></li>
                 <li><a th:href=""> Payment History </a></li>
                 <li><a th:href=""> Transaction History </a></li>
             </nav>
 
             <!--Display Name-->
             <div class="display-name ms-auto text-white">
-               <i class="fa fa-circle text-success me-2 "></i> WELCOME: <span> UserName </span>
+               <i class="fa fa-circle text-success me-2 "></i> WELCOME: <span> ${user.first_name} ${user.last_name} </span>
             </div>
 
             <!-- Log Out Button-->
-            <a th:href="" class="btn btn-sm ms-2 text-white">
+            <a th:href="@{/logout}" class="btn btn-sm ms-2 text-white">
                 <i class="fa fa-sign-out me-2"></i>Sign Out
             </a>
         </div>

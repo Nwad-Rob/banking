@@ -36,6 +36,13 @@
        <b th:text="${error}"></b>
      </div>
 
+     <div
+     th:if="${logged_out != null}"
+     class="alert alert-info text-center border border-info"
+   >
+     <b th:text="${logged_out}"></b>
+   </div>
+
        
         <!--Login Form-->
         <form action="/login" class="login-form" method="post">

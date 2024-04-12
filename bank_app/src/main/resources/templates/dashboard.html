@@ -1,36 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet" />
-    <link th:href="@{/css/fontawesome/css/all.css}" rel="stylesheet" />
-    <link th:href="@{/css/main.css}" rel="stylesheet" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script type="text/javascript" th:src="@{/js/bootstrap.bundle.js}"></script>
-    <title>Dashboard</title>
-  </head>
-  <body>
-    <div th:include="components/incl/header"></div>
+  <link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet" />
+  <link th:href="@{/css/fontawesome/css/all.css}" rel="stylesheet" />
+  <link th:href="@{/css/main.css}" rel="stylesheet" />
 
-    <!-- Transact OffCanvas: pulls from the left-->
-    <div th:include="components/transact_offcanvas :: transact_offcanvas"></div>
+  <script type="text/javascript" th:src="@{/js/bootstrap.bundle.js}"></script>
+  <title>Dashboard</title>
+</head>
 
-    <!-- Transact adAccount_OffCanvas: pulls from the right-->
-    <div th:include="components/add_account_offcanvas :: add_account_offcanvas"></div>
+<body>
+  <div th:insert="~{components/incl/header}"></div>
+  <div th:insert="~{components/transact_offcanvas}"></div>
+  <div th:insert="~{components/add_account_offcanvas }"></div>
+  <div th:insert="~{components/account_display}" th:if="${#lists.size(userAccounts) > 0}"></div>
+  <div th:insert="~{components/no_accounts_display}"
+    th:unless="${#lists.size(userAccounts) > 0}"></div>
+  <div th:insert="~{components/incl/footer}"></div>
 
-    <div th:if="${#lists.size(userAccounts) > 0}">
-      <!-- Display Accounts-->
-      <div th:include="components/account_display :: account_display"></div>
-    </div>
-    <div th:unless="${#lists.size(userAccounts) > 0}">
-      <!-- Don't Display Accounts-->
-      <div th:include="components/no_accounts_display :: no_accounts_display"></div>
-    </div>
 
-    <div th:include="components/incl/footer :: footer"></div>
+  <script th:src="@{/js/main.js}"></script>
+</body>
 
-    <script th:src="@{/js/main.js}"></script>
-  </body>
 </html>

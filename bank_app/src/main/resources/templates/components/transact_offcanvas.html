@@ -24,19 +24,19 @@
         <!-- End of Transaction type: Drop down list -->
         
         <!-- Payment Form Cards -->
-        <div th:include="components/transact_forms/payment_form :: payment_form"></div>
+        <div th:insert="~{components/transact_forms/payment_form}"></div>
         <!-- End Of Payment Form Cards -->
         
         <!-- Transfer Form Cards -->
-        <div th:include="components/transact_forms/transfer_form :: transfer_form"></div>
+        <div th:insert="~{components/transact_forms/transfer_form}"></div>
         <!-- End Of Transfer Form Cards -->
         
         <!-- Deposit Form Cards -->
-        <div th:include="components/transact_forms/deposit_form :: deposit_form"></div>
+        <div th:insert="~{components/transact_forms/deposit_form}"></div>
         <!-- End Of Deposit Form Cards -->
         
         <!-- Withdraw Form Cards -->
-        <div th:include="components/transact_forms/withdraw_form :: withdraw_form"></div>
+        <div th:insert="~{components/transact_forms/withdraw_form}"></div>
         <!-- End Of Withdraw Form Cards -->
     </div>
     <!-- End of offCanvas Body -->

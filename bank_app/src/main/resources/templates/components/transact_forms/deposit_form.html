@@ -7,7 +7,7 @@
     <div class="card-body">
         <div class="form-group">
             <label for="">Enter deposit Amount</label>
-            <input type="text" class="form-control" th:name="deposit_amount" th:placeholder="Enter Deposit Amount">
+            <input type="text" class="form-control" th:name="deposit_amount" th:placeholder="${'Enter Deposit Amount'}">
         </div>
         <form action="" class="depost-form" th:action="@{/deposit}">
             <!-- Form Group -->

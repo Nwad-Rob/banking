@@ -30,6 +30,7 @@ public class AppController {
         //Get Logged in user details
         User user = (User) session.getAttribute("user");
 
+
         //Get the Accounts of the logged in user
         List<Account> getUserAccount = accountRepo.getUserAccountById(user.getUser_id());
 
@@ -38,6 +39,7 @@ public class AppController {
         BigDecimal totalBalance = accountRepo.getBalance(user.getUser_id());
 
         //Set Object
+        getDashboardPage.addObject("user",user);
         getDashboardPage.addObject("userAccounts", getUserAccount);
         getDashboardPage.addObject("totalBalance", totalBalance);
         return getDashboardPage;

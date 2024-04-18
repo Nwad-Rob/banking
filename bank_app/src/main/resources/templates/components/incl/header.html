@@ -18,8 +18,9 @@
 
             <!--Display Name-->
             <div class="display-name ms-auto text-white">
-               <i class="fa fa-circle text-success me-2 "></i> WELCOME: <span> ${user.first_name} ${user.last_name} </span>
+                <i class="fa fa-circle text-success me-2"></i> WELCOME: <span th:text="${user.first_name + ' ' + user.last_name}"></span>
             </div>
+            
 
             <!-- Log Out Button-->
             <a th:href="@{/logout}" class="btn btn-sm ms-2 text-white">

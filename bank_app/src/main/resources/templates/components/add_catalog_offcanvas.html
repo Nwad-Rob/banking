@@ -4,7 +4,7 @@
 <!-- Right Side Offcanvas: Accounts Form Container -->
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightlabel">
     <div class="offcanvas-header">
-        <h5 id="offCanvasRightlabel" class="text-black">Create / Add an Account</h5>
+        <h5 id="offCanvasRightlabel" class="text-black">Create / Add a Catalog</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <!-- Offcanvas Body: Accounts form wrapper -->
@@ -16,18 +16,24 @@
                 <form action="" class="add-account-form">
                     <!-- Form Group -->
                     <div class="form-group mb-3">
-                        <label for="">Enter Account Name</label>
+                        <label for="">Enter Catalog's Name</label>
                         <input type="text" name="account_name" class="form-control" th:placeholder="${'Enter Account name'}">
                     </div>
 
                     <!-- Form Group -->
                     <div class="form-group mb-3">
-                        <label for="">Select Account Type</label>
+                        <label for="">Select Catalog Type</label>
                         <select name="account_type" class="form-control" id="">
-                            <option value="">--Select Account Type--</option>
-                            <option value="check">--Checking Account--</option>
-                            <option value="savings">--Savings Account Type</option>
-                            <option value="business">--Business Account Type</option>
+                            <option value="">--Select Catalog Type--</option>
+                            <option value="movies">--Movies--</option>
+                            <option value="tv_series">--TV Series--</option>
+                            <option value="books">--Books--</option>
+                            <option value="restaurants">--Restaurants--</option>
+                            <option value="clothes">--Clothes--</option>
+                            <option value="art">--Art--</option>
+                            <option value="games">--Games--</option>
+                            <option value="music">--Music--</option>
+                            <option value="shoes">--Shoes--</option>
                         </select>
                     </div>
 

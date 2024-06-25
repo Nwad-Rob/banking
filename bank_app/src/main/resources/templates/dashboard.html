@@ -16,7 +16,7 @@
 <body>
   <div th:insert="~{components/incl/header}"></div>
   <div th:insert="~{components/transact_offcanvas}"></div>
-  <div th:insert="~{components/add_account_offcanvas }"></div>
+  <div th:insert="~{components/add_catalog_offcanvas }"></div>
   <div th:insert="~{components/account_display}" th:if="${#lists.size(userAccounts) > 0}"></div>
   <div th:insert="~{components/no_accounts_display}"
     th:unless="${#lists.size(userAccounts) > 0}"></div>

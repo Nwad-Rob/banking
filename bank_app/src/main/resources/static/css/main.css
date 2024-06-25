@@ -47,7 +47,7 @@ body{
     
 }
 
-#account-btn{
+#catalog-btn{
     background-color: red;
   border: 1px solid #ff4d0075;
   color: white;
@@ -62,11 +62,11 @@ body{
 }
 
 /* Card payment-card*/
-.payment-card{
+.movie-card{
     display: none;
 }
 
-.transfer-card{
+.tv_series-card{
     display: none;
 }
 
@@ -74,6 +74,32 @@ body{
     display: none;
 }
 
-.wthdraw-card{
+.books-card{
     display: none;
 }
+
+.places-card{
+    display: none;
+}
+
+.clothes-card{
+    display: none;
+}
+
+.art-card{
+    display: none;
+}
+
+.games-card{
+    display: none;
+}
+
+.music-card{
+    display: none;
+}
+
+.shoes-card{
+    display: none;
+}
+
+

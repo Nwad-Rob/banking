@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="">
 
 <head>
   <meta charset="UTF-8" />
@@ -16,7 +16,23 @@
 <body>
   <div th:insert="~{components/incl/header}"></div>
   <div th:insert="~{components/transact_offcanvas}"></div>
+
   <div th:insert="~{components/add_catalog_offcanvas }"></div>
+  <div
+          th:if="${success != null}"
+          class="alert alert-info text-center border border-info"
+  >
+    <b th:text="${logged_out}"></b>
+  </div>
+  <!-- Display Message -->
+  <div
+          th:if="${error != null}"
+          class="alert alert-danger text-center border border-danger"
+  >
+    <b th:text="${error}"></b>
+  </div>
+
+
   <div th:insert="~{components/account_display}" th:if="${#lists.size(userAccounts) > 0}"></div>
   <div th:insert="~{components/no_accounts_display}"
     th:unless="${#lists.size(userAccounts) > 0}"></div>

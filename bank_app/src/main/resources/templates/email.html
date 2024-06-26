@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Remember to change from double quote to single quote because of Java-->
-<html xlmns:th="http://www.thymeleaf.org" >
+<html xmlns:th="http://www.thymeleaf.org"  lang="">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -61,8 +61,8 @@
         padding: 15px;
         color: gray;
         font-size: 14px;
-        margin: 20px 0px;
-        justify-content: flex;
+        margin: 20px 0;
+        justify-content: flex-start;
       }
     </style>
   </head>
@@ -87,9 +87,9 @@
       <br />
 
       <!-- Verification Button-->
-      <center>
+      <div style="text-align: center;">
         <a th:href="" class="verify-account-btn" role="button"> Verify Account</a>
-      </center>
+      </div>
       <!-- End of Verification Button-->
 
       <!--Copyright Clause-->

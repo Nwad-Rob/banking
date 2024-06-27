@@ -17,12 +17,13 @@
   <div th:insert="~{components/incl/header}"></div>
   <div th:insert="~{components/transact_offcanvas}"></div>
 
+<!-- Creating a catalog and updating the dashboard with error and success information-->
   <div th:insert="~{components/add_catalog_offcanvas }"></div>
   <div
           th:if="${success != null}"
           class="alert alert-info text-center border border-info"
   >
-    <b th:text="${logged_out}"></b>
+    <b th:text="${success}"></b>
   </div>
   <!-- Display Message -->
   <div

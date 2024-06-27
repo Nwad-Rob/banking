@@ -29,6 +29,9 @@ public class AppController {
 
         //Get Logged in user details
         User user = (User) session.getAttribute("user");
+        if (user != null) {
+            return  new ModelAndView("redirect:/login");
+        }
 
 
         //Get the Accounts of the logged in user

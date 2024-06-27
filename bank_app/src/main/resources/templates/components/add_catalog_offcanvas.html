@@ -13,7 +13,7 @@
         <div class="card">
             <!-- Card Body -->
             <div class="card-body">
-                <form action="" class="add-account-form">
+                <form th:action="@{/account/create_account}" th:method="post" class="add-account-form">
                     <!-- Form Group -->
                     <div class="form-group mb-3">
                         <label for="">Enter Catalog's Name</label>
@@ -39,7 +39,7 @@
 
                     <!-- Form Group -->
                     <div class="form-group mb-2">
-                        <button id="transact-btn" class="btn btn-md" type="submit">Add Account</button>
+                        <button id="transact-btn" class="btn btn-md" type="submit">Add Catalog</button>
                     </div>
                 </form>
             </div>

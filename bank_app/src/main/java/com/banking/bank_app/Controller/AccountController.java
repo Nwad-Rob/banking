@@ -34,6 +34,9 @@ public class AccountController {
 
         //TODO: GET LOGGED IN USER
         User user = (User) session.getAttribute("user");
+        if(user == null){
+            return "redircet:/login";
+        }
 
         //TODO: GENERATE ACCOUNT/CATALOG NUMBER
         int setCatalogNumber = GenAcctNumber.generateAcctNumber();

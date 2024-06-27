@@ -20,8 +20,8 @@ public interface AccountRepository extends JpaRepository<Account,Long> {
     BigDecimal getBalance(@Param("user_id") Long user_id);
 
     @Modifying
-    @Query(value = "INSERT INTO Accounts(userid,account_number,account_name,account_type) VALUES"+
-            "(:userid,:account_number,:account_name,:account_type)", nativeQuery = true)
+    @Query(value = "INSERT INTO Accounts(user_id,account_number,account_name,account_type) VALUES"+
+            "(:user_id,:account_number,:account_name,:account_type)", nativeQuery = true)
     @Transactional
     void createCatalogAccount(@Param("user_id") Long user_id,
                               @Param("account_number") String account_number,
